@@ -3,7 +3,7 @@ pipeline {
 
 	tools {
 		maven 'Maven3'
-		jdk 'JDK25'
+		jdk 'JDK21'
 	}
 
 	triggers {
@@ -19,6 +19,12 @@ pipeline {
 		}
 
 		stage('Build') {
+			when {
+				anyOf {
+					branch 'main'
+					changeRequest()  // это PR
+				}
+			}
 			steps {
 				echo "🚀 Собираем и отчищаем проект mvn clean..."
 				sh 'mvn -B clean'
@@ -26,17 +32,14 @@ pipeline {
 		}
 
 		stage('Run Tests') {
+			when {
+				anyOf {
+					branch 'main'
+					changeRequest()
+				}
+			}
 			steps {
 				sh 'mvn test'
-			}
-		}
-
-		stage('Review Required') {
-			steps {
-				script {
-					echo "Ожидание ручного ревью..."
-					input message: "Одобрить результаты тестов перед мёрджем?", ok: "Approve"
-				}
 			}
 		}
 
@@ -52,13 +55,17 @@ pipeline {
 
 	post {
 		always {
-			junit '**/target/surefire-reports/*.xml' // если есть тест-репорты
+			script {
+				if (env.BRANCH_NAME == 'main' || env.CHANGE_ID) {
+					junit '**/target/surefire-reports/*.xml'
+				}
+			}
 		}
 		success {
-			echo "✅ Тесты прошли успешно. Pipeline успешно выполнен!"
+			echo "✅ Pipeline успешно выполнен!"
 		}
 		failure {
-			echo "❌ Тесты прошли плохо, Pipeline упал :("
+			echo "❌ Pipeline упал :("
 		}
 	}
 }
