@@ -1,8 +1,8 @@
 package karachebanTests;
 
 import allclasses.karachebanDI.StudyDesk;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class StudyDeskTest {
 
@@ -10,12 +10,12 @@ public class StudyDeskTest {
     public void constructorAndGetters_workCorrectly() {
         StudyDesk desk = new StudyDesk("desk", 12345, 8000, 120, 60, 75);
 
-        assertEquals("desk", desk.getType());
-        assertEquals(12345, desk.getSerialNumber());
-        assertEquals(8000, desk.getPrice());
-        assertEquals(120, desk.getLength());
-        assertEquals(60, desk.getWidth());
-        assertEquals(75, desk.getHeight());
+        Assert.assertEquals("desk", desk.getType());
+        Assert.assertEquals(12345, desk.getSerialNumber());
+        Assert.assertEquals(8000, desk.getPrice(), 0.0001);
+        Assert.assertEquals(120, desk.getLength(),0.0001);
+        Assert.assertEquals(60, desk.getWidth(),0.0001);
+        Assert.assertEquals(75, desk.getHeight(),0.0001);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class StudyDeskTest {
         double expectedUsd = 8000 / 80.0;
         double actualUsd = desk.ConvertPrice("USD");
 
-        assertEquals(expectedUsd, actualUsd, 0.001);
+        Assert.assertEquals(expectedUsd, actualUsd, 0.001);
     }
 
     @Test
@@ -34,7 +34,7 @@ public class StudyDeskTest {
 
         double actualRub = desk.ConvertPrice("RUB");
 
-        assertEquals(8000, actualRub);
+       Assert.assertEquals(8000, actualRub, 0.001);
     }
 
     @Test
@@ -43,7 +43,7 @@ public class StudyDeskTest {
 
         String text = desk.ToString();
 
-        assertTrue(text.contains("Тип: desk"));
-        assertTrue(text.contains("Серийный номер: 12345"));
+        Assert.assertTrue(text.contains("Тип: desk"));
+        Assert.assertTrue(text.contains("Серийный номер: 12345"));
     }
 }
