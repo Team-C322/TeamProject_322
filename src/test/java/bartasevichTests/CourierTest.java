@@ -72,7 +72,7 @@ public class CourierTest {
         if (createStatusCodeActual == SC_CREATED) {
             okResultActual = responseCreate.extract().path("ok");
         }
-        Assert.assertEquals(okResultActual, okResult);
+        Assert.assertEquals(okResult,okResultActual);
     }
 }
 
