@@ -1,6 +1,6 @@
 package org.example;
-import allclasses.bartasevich.generators.CourierGenerator;
-import allclasses.bartasevich.generators.OrderGenerator;
+import allclasses.bartasevich.generator.CourierGenerator;
+import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.karachebanDI.StudyDesk;
