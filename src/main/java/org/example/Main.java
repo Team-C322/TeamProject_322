@@ -1,5 +1,9 @@
 package org.example;
 
+import allclasses.bartasevich.generator.CourierGenerator;
+import allclasses.bartasevich.generator.OrderGenerator;
+import allclasses.bartasevich.model.Courier;
+import allclasses.bartasevich.model.Order;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
 
@@ -12,6 +16,7 @@ public class Main {
     public static void main(String[] args) {
 
         karachebanDI();
+        bartasevich();
         golovachevClassShowCase();
 
     }
@@ -29,6 +34,14 @@ public class Main {
         desk.ShowPrice("USD");
         System.out.println("Для покупки свяжитесь со мной");
         desk.ContactToBuy();
+    }
+
+    private static void bartasevich() {
+        Courier courier = CourierGenerator.getDefault();
+        Order order = OrderGenerator.getOrderSomeDataWithTwoColors();
+        System.out.println("\n***************** Бартасевич И. Г. *********************");
+        System.out.println("\nИнформация о заказе:");
+        System.out.println(order.toString());
     }
 
     private static void golovachevClassShowCase() {
