@@ -1,7 +1,7 @@
 package golovachevTests;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Test;
 import allclasses.golovachev.Rectangle;
 
 public class RactangleTest {
@@ -9,16 +9,16 @@ public class RactangleTest {
     public void constructorWithParametersAndGetters_workCorrectly() {
         Rectangle rect = new Rectangle(3, 5);
 
-        assertEquals(3, rect.getA());
-        assertEquals(5, rect.getB());
+        Assert.assertEquals(3, rect.getA(), 0.00001);
+        Assert.assertEquals(5, rect.getB(), 0.00001);
     }
 
     @Test
     public void constructorWithoutParametersAndGetters_workCorrectly() {
         Rectangle rect = new Rectangle();
 
-        assertEquals(1, rect.getA());
-        assertEquals(1, rect.getB());
+        Assert.assertEquals(1, rect.getA(), 0.00001);
+        Assert.assertEquals(1, rect.getB(), 0.00001);
     }
 
     @Test
@@ -27,7 +27,7 @@ public class RactangleTest {
         double expectedRes = 6;
         double res = rect.GetArea();
 
-        assertEquals(expectedRes, res);
+        Assert.assertEquals(expectedRes, res, 0.00001);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class RactangleTest {
         double expectedRes = 8;
         double res = rect.GetArea();
 
-        assertEquals(expectedRes, res);
+        Assert.assertEquals(expectedRes, res, 0.00001);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class RactangleTest {
         double expectedRes = 10;
         double res = rect.GetPerimetr();
 
-        assertEquals(expectedRes, res);
+        Assert.assertEquals(expectedRes, res, 0.00001);
     }
 
     @Test
@@ -54,6 +54,6 @@ public class RactangleTest {
         double expectedRes = 11.4;
         double res = rect.GetPerimetr();
 
-        assertEquals(expectedRes, res);
+        Assert.assertEquals(expectedRes, res, 0.00001);
     }
 }
