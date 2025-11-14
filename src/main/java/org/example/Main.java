@@ -1,5 +1,6 @@
 package org.example;
 import allclasses.karachebanDI.StudyDesk;
+import allclassess.Yarish.SimpleMath;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -27,4 +28,8 @@ public class Main {
         desk.ContactToBuy();
     }
     //endregion
+
+    private static void Yarish(){
+        SimpleMath math = new SimpleMath();
+    }
 }
