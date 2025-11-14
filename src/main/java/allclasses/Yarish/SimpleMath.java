@@ -1,4 +1,4 @@
-package allclassess.Yarish;
+package allclasses.Yarish;
 
 public class SimpleMath {
 
