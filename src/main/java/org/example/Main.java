@@ -4,7 +4,7 @@ import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.karachebanDI.StudyDesk;
-import allclassess.Yarish.SimpleMath;
+import allclasses.Yarish.SimpleMath;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
