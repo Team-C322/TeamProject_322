@@ -1,8 +1,10 @@
 package allclasses.Budykin;
 
 public interface ICounter {
-    void increment();
+    void multiply(double amount);
+    void divide(double amount);
+    void subtract(double amount);
     void add(int amount);
-    int getValue();
+    double getValue();
     void reset();
 }
