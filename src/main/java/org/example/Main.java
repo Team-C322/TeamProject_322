@@ -1,5 +1,6 @@
 package org.example;
 
+import allclasses.Budykin.Counter;
 import allclasses.bartasevich.generator.CourierGenerator;
 import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
@@ -21,6 +22,7 @@ public class Main {
         bartasevich();
         golovachevClassShowCase();
         patrushevClassShowCase();
+        budykinClassShowCase();
         Yarish();
     }
 
@@ -73,6 +75,29 @@ public class Main {
         System.out.println("Автор: Патрушев");
     }
 
+    private static void budykinClassShowCase(){
+        System.out.println("\n***************** Будыкин Н. К. *********************");
+        Counter calc = new Counter();
+        System.out.println("\nНачало работы");
+        System.out.println("Начальное значение счетчика:");
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Добавляем 10:");
+        calc.add(10);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Умножаем на 2:");
+        calc.multiply(2);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Вычитаем 5:");
+        calc.subtract(5);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Делим на 3:");
+        calc.divide(3);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Сбрасываем счетчик:");
+        calc.reset();
+        System.out.println("value = " + calc.getValue());
+        System.out.println("\nАвтор: Будыкин");
+    }
     private static void Yarish(){
         SimpleMath math = new SimpleMath();
         System.out.println("\n**************************************");
