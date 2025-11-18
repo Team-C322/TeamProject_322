@@ -8,6 +8,7 @@ import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
+import allclasses.egarmina.Oval;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -22,6 +23,7 @@ public class Main {
         golovachevClassShowCase();
         patrushevClassShowCase();
         Yarish();
+        egarmina();
     }
 
     // region Методы студентов
@@ -89,6 +91,23 @@ public class Main {
         System.out.println("Число 10 положительное? " + math.isPositive(10));
         System.out.println("Число -3 положительное? " + math.isPositive(-3));
         System.out.println("**************************************");
+    }
+
+    private static void egarmina() {
+        Oval oval = new Oval(3, 2);
+        Oval circle = new Oval(4, 4); // частный случай - круг
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики овала");
+        System.out.println(oval.toString());
+        System.out.println("Площадь овала: " + oval.getArea());
+        System.out.println("Периметр овала: " + oval.getPerimeter());
+
+        System.out.println("\nХарактеристики круга (частный случай овала)");
+        System.out.println(circle.toString());
+        System.out.println("Площадь круга: " + circle.getArea());
+        System.out.println("Периметр круга: " + circle.getPerimeter());
+        System.out.println("Автор: Егармина");
     }
 
     // endregion
