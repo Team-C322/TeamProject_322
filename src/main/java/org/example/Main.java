@@ -62,7 +62,7 @@ public class Main {
     private static void patrushevClassShowCase() {
         Triangle triangle = new Triangle(3, 4, 5);
 
-        System.out.println("*********************************");
+        System.out.println("***************** Патрушев Т. А. *********************");
         System.out.println("Характеристики треугольника");
         System.out.println(triangle.toString());
         System.out.println("Периметр треугольника:");
