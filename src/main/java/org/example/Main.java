@@ -8,6 +8,7 @@ import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
+import allclasses.potylicyna.Circle;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -22,6 +23,7 @@ public class Main {
         golovachevClassShowCase();
         patrushevClassShowCase();
         Yarish();
+        potylicynaMethod();
     }
 
     // region Методы студентов
@@ -91,5 +93,14 @@ public class Main {
         System.out.println("**************************************");
     }
 
+    public static void potylicynaMethod() {
+        System.out.println("\n*****************  Потылицына З. С. *********************");
+        System.out.println("Демонстрация работы класса Circle:");
+        System.out.println("Характеристики круга:");
+        Circle circle = new Circle("purple", 7.5, 300);
+        System.out.println(circle.getDescription());
+        circle.printPrice();
+        System.out.printf("Длина окружности: %.1f см\n", circle.calculateCircumference());
+    }
     // endregion
 }
