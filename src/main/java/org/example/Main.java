@@ -21,7 +21,7 @@ public class Main {
     // Пример оформления смотрите тут
     private static void karachebanDI(){
 
-        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
+        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 10, 70);
 
         System.out.println("*********************************");
         System.out.println("Характеристики стола");
@@ -39,5 +39,7 @@ public class Main {
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
     }
+
+    
     //endregion
 }
