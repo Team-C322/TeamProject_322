@@ -50,7 +50,7 @@ public class Main {
     private static void golovachevClassShowCase() {
         Rectangle rect = new Rectangle(1.5, 4);
 
-        System.out.println("*********************************");
+        System.out.println("***************** Головачев  М. Б. *********************");
         System.out.println("Характеристики прямоугольника");
         System.out.println(rect.toString());
         System.out.println("Площадь прямоугольника");
@@ -73,7 +73,7 @@ public class Main {
         System.out.println("Автор: Патрушев");
     }
 
-    private static void Yarish(){
+    private static void Yarish() {
         SimpleMath math = new SimpleMath();
         System.out.println("\n**************************************");
         System.out.println("Демонстрация работы класса SimpleMath:");
