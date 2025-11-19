@@ -16,6 +16,7 @@ public class Main {
 
         karachebanDI();
         bartasevich();
+        smorgun();
 
     }
     //region Методы студентов
@@ -41,8 +42,10 @@ public class Main {
         System.out.println(order.toString());
     }
 
-    private static void smorgun(){
-    
+    private static void smorgun()
+    {
+    System.out.println("\n*****************Сморгун*********************");
+    System.out.println("\nИнформация о котах:");
     Cat[] cats = {
         new Cat("Барсик", 3, "Мужской", "Британский"),
         new Cat("Мурка", 2, "Женский", "Сиамская"), 
@@ -58,7 +61,7 @@ public class Main {
     System.out.println("\nДополнительная информация:");
     System.out.println("Самый старший кот: " + cats[2].getName() + " (" + cats[2].getAge() + " года)");
     System.out.println("Единственная кошка: " + cats[1].getName() + " (" + cats[1].getBreed() + ")");
-}
+    }
 
     //endregion
 
