@@ -9,6 +9,7 @@ import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
+import allclasses.stepcheva.DancePair;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -115,6 +116,23 @@ public class Main {
         System.out.println("Число -3 положительное? " + math.isPositive(-3));
         System.out.println("**************************************");
     }
+
+    private static void stepchevaClassShowCase() {
+    System.out.println("\n***************** Степчева *********************");
+
+    DancePair pair = new DancePair("Алиса", "Георгий", "Ча-ча-ча");
+
+    System.out.println("Информация о паре:");
+    System.out.println(pair);
+
+    System.out.println("Пара полная? → " + pair.isCompletePair());
+
+    System.out.println("Мини-оценка пары:");
+    System.out.println("Балл пары: " + pair.evaluate());
+
+    System.out.println("Автор: Степчева");
+    }
+
 
     // endregion
 }
