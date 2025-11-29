@@ -8,6 +8,7 @@ import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
@@ -30,6 +31,7 @@ public class Main {
         mardanov();
         kotelnikov();
         statsyuk();
+        kornilov();
     }
 
     // region Методы студентов
@@ -55,10 +57,6 @@ public class Main {
         System.out.println(order.toString());
     }
 
-<<<<<<< HEAD
-    
-    //endregion
-=======
     private static void golovachevClassShowCase() {
         Rectangle rect = new Rectangle(1.5, 4);
 
@@ -177,6 +175,15 @@ public class Main {
         System.out.println("Вся информация о человеке: ");
         System.out.println(person.getInfo());
     }
+
+    private static void kornilov(){
+        Virmash virmash = new Virmash("user0", "1234", "Ubuntu", 1024d, 2048d);
+        System.out.println("\n***************** Корнилов Лев *********************");
+        System.out.println("Информация о виртуальной машине:");
+        virmash.ShowInfo();
+        System.out.println("Данные о иртуальной машине в строку: " + virmash.ToString());
+        System.out.println("Конвертированный в Kб размер диска: " + virmash.ConvertDiskSize("Kb"));
+
+    }
     // endregion
->>>>>>> origin/main
 }
