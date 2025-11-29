@@ -1,10 +1,14 @@
 package org.example;
+
+import allclasses.Budykin.Counter;
 import allclasses.bartasevich.generator.CourierGenerator;
 import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
+import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
-import allclasses.mardanov.Transformer;
+import allclasses.patrushev.Triangle;
+import allclasses.Yarish.SimpleMath;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -16,12 +20,15 @@ public class Main {
 
         karachebanDI();
         bartasevich();
-        mardanov();
-
+        golovachevClassShowCase();
+        patrushevClassShowCase();
+        budykinClassShowCase();
+        Yarish();
     }
-    //region Методы студентов
+
+    // region Методы студентов
     // Пример оформления смотрите тут
-    private static void karachebanDI(){
+    private static void karachebanDI() {
 
         StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
 
@@ -34,12 +41,79 @@ public class Main {
         desk.ContactToBuy();
     }
 
-    private static void bartasevich(){
+    private static void bartasevich() {
         Courier courier = CourierGenerator.getDefault();
         Order order = OrderGenerator.getOrderSomeDataWithTwoColors();
         System.out.println("\n***************** Бартасевич И. Г. *********************");
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
+    }
+
+    private static void golovachevClassShowCase() {
+        Rectangle rect = new Rectangle(1.5, 4);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики прямоугольника");
+        System.out.println(rect.toString());
+        System.out.println("Площадь прямоугольника");
+        System.out.println(rect.GetArea());
+        System.out.println("Периметр прямоугольника");
+        System.out.println(rect.GetPerimetr());
+    }
+
+    private static void patrushevClassShowCase() {
+        Triangle triangle = new Triangle(3, 4, 5);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики треугольника");
+        System.out.println(triangle.toString());
+        System.out.println("Периметр треугольника:");
+        System.out.println("P = " + triangle.getPerimeter());
+        System.out.println("Площадь треугольника:");
+        System.out.println("S = " + triangle.getArea());
+        System.out.println("Для использования свяжитесь со мной");
+        System.out.println("Автор: Патрушев");
+    }
+
+    private static void budykinClassShowCase(){
+        System.out.println("\n***************** Будыкин Н. К. *********************");
+        Counter calc = new Counter();
+        System.out.println("\nНачало работы");
+        System.out.println("Начальное значение счетчика:");
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Добавляем 10:");
+        calc.add(10);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Умножаем на 2:");
+        calc.multiply(2);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Вычитаем 5:");
+        calc.subtract(5);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Делим на 3:");
+        calc.divide(3);
+        System.out.println("value = " + calc.getValue());
+        System.out.println("Сбрасываем счетчик:");
+        calc.reset();
+        System.out.println("value = " + calc.getValue());
+        System.out.println("\nАвтор: Будыкин");
+    }
+    private static void Yarish(){
+        SimpleMath math = new SimpleMath();
+        System.out.println("\n*******************Яриш Арина*******************");
+        System.out.println("Демонстрация работы класса SimpleMath:");
+        System.out.println("\n1. Вычисление факториала:");
+        System.out.println("Факториал 5 = " + math.factorial(5));
+        System.out.println("Факториал 2 = " + math.factorial(2));
+        System.out.println("\n2. Проверка четности:");
+        System.out.println("Число 4 четное? " + math.isEven(4));
+        System.out.println("Число 7 четное? " + math.isEven(7));
+        System.out.println("\n3. Сумма чисел от 1 до N:");
+        System.out.println("Сумма чисел от 1 до 7 = " + math.sumToN(7));
+        System.out.println("\n4. Проверка положительности:");
+        System.out.println("Число 10 положительное? " + math.isPositive(10));
+        System.out.println("Число -3 положительное? " + math.isPositive(-3));
+        System.out.println("**************************************");
     }
 
     private static void mardanov(){
@@ -68,5 +142,6 @@ public class Main {
         transformer2.setActive(false);
         System.out.println("Неактивный трансформер: " + transformer2.toUpperCase("test"));
     }
-    //endregion
+
+    // endregion
 }
