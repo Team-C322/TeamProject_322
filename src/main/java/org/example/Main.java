@@ -1,4 +1,5 @@
 package org.example;
+import allclasses.Statsyuk.Person;
 import allclasses.bartasevich.generators.CourierGenerator;
 import allclasses.bartasevich.generators.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
@@ -15,6 +16,7 @@ public class Main {
 
         karachebanDI();
         bartasevich();
+        statsyuk();
 
     }
     //region Методы студентов
@@ -38,6 +40,17 @@ public class Main {
         System.out.println("\n***************** Бартасевич И. Г. *********************");
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
+    }
+
+    private static void statsyuk(){
+        Person person = new Person("Oleg", 18, "SPb");
+        System.out.println("\n***************** Стацюк Дмитрий *********************");
+        System.out.println("Сейчас человеку лет: " + person.getAge());
+        System.out.println("Празднуем др!");
+        person.celebrateBirthday();
+        System.out.println("Сейчас человеку лет: " + person.getAge());
+        System.out.println("Вся информация о человеке: ");
+        System.out.println(person.getInfo());
     }
     //endregion
 }
