@@ -9,6 +9,7 @@ import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
+import allclasses.mardanov.Transformer;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
