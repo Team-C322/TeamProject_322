@@ -100,7 +100,7 @@ public class Main {
     }
     private static void Yarish(){
         SimpleMath math = new SimpleMath();
-        System.out.println("\n**************************************");
+        System.out.println("\n*******************Яриш Арина*******************");
         System.out.println("Демонстрация работы класса SimpleMath:");
         System.out.println("\n1. Вычисление факториала:");
         System.out.println("Факториал 5 = " + math.factorial(5));
