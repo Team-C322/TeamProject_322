@@ -7,6 +7,7 @@ import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
 import allclasses.mardanov.Transformer;
@@ -26,6 +27,7 @@ public class Main {
         budykinClassShowCase();
         Yarish();
         mardanov();
+        kotelnikov();
     }
 
     // region Методы студентов
@@ -145,5 +147,18 @@ public class Main {
         System.out.println("Неактивный трансформер: " + transformer2.toUpperCase("test"));
     }
 
+    private static void kotelnikov(){
+        System.out.println("\n***************** Котельников *********************");
+        PiggyBank myPiggyBank = new PiggyBank("Egor");
+        System.out.println("Тестируем копилку");
+        myPiggyBank.addMoney(1000.0);
+        myPiggyBank.addMoney(500.50);
+        myPiggyBank.takeMoney(300.0);
+        myPiggyBank.printInfo();
+        System.out.println("\nПроверка обработки ошибок");
+        myPiggyBank.addMoney(-100.0);
+        myPiggyBank.takeMoney(2000.0);
+        System.out.println("\nФинальный баланс: $" + myPiggyBank.getBalance() + ".");
+    }
     // endregion
 }
