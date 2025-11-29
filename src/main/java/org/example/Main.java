@@ -1,6 +1,7 @@
 package org.example;
 
 import allclasses.Budykin.Counter;
+import allclasses.Statsyuk.Person;
 import allclasses.bartasevich.generator.CourierGenerator;
 import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
@@ -28,6 +29,7 @@ public class Main {
         Yarish();
         mardanov();
         kotelnikov();
+        statsyuk();
     }
 
     // region Методы студентов
@@ -159,6 +161,17 @@ public class Main {
         myPiggyBank.addMoney(-100.0);
         myPiggyBank.takeMoney(2000.0);
         System.out.println("\nФинальный баланс: $" + myPiggyBank.getBalance() + ".");
+    }
+
+    private static void statsyuk(){
+        Person person = new Person("Oleg", 18, "SPb");
+        System.out.println("\n***************** Стацюк Дмитрий *********************");
+        System.out.println("Сейчас человеку лет: " + person.getAge());
+        System.out.println("Празднуем др!");
+        person.celebrateBirthday();
+        System.out.println("Сейчас человеку лет: " + person.getAge());
+        System.out.println("Вся информация о человеке: ");
+        System.out.println(person.getInfo());
     }
     // endregion
 }
