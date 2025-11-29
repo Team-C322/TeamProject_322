@@ -25,6 +25,7 @@ public class Main {
         patrushevClassShowCase();
         budykinClassShowCase();
         Yarish();
+        mardanov();
     }
 
     // region Методы студентов
