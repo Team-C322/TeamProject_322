@@ -8,6 +8,7 @@ import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
@@ -24,6 +25,8 @@ public class Main {
 
         karachebanDI();
         bartasevich();
+        smorgun();
+
         golovachevClassShowCase();
         patrushevClassShowCase();
         budykinClassShowCase();
@@ -57,6 +60,30 @@ public class Main {
         System.out.println(order.toString());
     }
 
+    private static void smorgun()
+    {
+    System.out.println("\n*****************Сморгун*********************");
+    System.out.println("\nИнформация о котах:");
+    Cat[] cats = {
+        new Cat("Барсик", 3, "Мужской", "Британский"),
+        new Cat("Мурка", 2, "Женский", "Сиамская"), 
+        new Cat("Васька", 4, "Мужской", "Дворовый")
+    };
+
+    for (int i = 0; i < cats.length; i++) {
+        System.out.println("\nКот №" + (i + 1) + ":");
+        cats[i].displayInfo();
+        cats[i].meow();
+    }
+    
+    System.out.println("\nДополнительная информация:");
+    System.out.println("Самый старший кот: " + cats[2].getName() + " (" + cats[2].getAge() + " года)");
+    System.out.println("Единственная кошка: " + cats[1].getName() + " (" + cats[1].getBreed() + ")");
+    }
+
+    //endregion
+
+    
     private static void golovachevClassShowCase() {
         Rectangle rect = new Rectangle(1.5, 4);
 
