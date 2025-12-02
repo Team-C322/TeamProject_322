@@ -14,6 +14,7 @@ import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
 import allclasses.mardanov.Transformer;
+import allclasses.shchegoleva.Trapezium;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -22,7 +23,7 @@ import allclasses.mardanov.Transformer;
 
 public class Main {
     public static void main(String[] args) {
-
+        shchegoleva();
         karachebanDI();
         bartasevich();
         smorgun();
@@ -202,6 +203,19 @@ public class Main {
         System.out.println("Вся информация о человеке: ");
         System.out.println(person.getInfo());
     }
+    private static void shchegoleva() {
+        Trapezium tr = new Trapezium(2.0, 6.0, 3.0, 4.0, 2.5);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики трапеции");
+        System.out.println(tr.toString());
+        System.out.println("Периметр трапеции:");
+        System.out.println("P = " + tr.getPerimeter());
+        System.out.println("Площадь трапеции:");
+        System.out.println("S = " + tr.getArea());
+        System.out.println("Для использования свяжитесь со мной");
+        System.out.println("Автор: Щеголёва");
+    }
 
     private static void kornilov(){
         Virmash virmash = new Virmash("user0", "1234", "Ubuntu", 1024d, 2048d);
@@ -211,6 +225,5 @@ public class Main {
         System.out.println("Данные о иртуальной машине в строку: " + virmash.ToString());
         System.out.println("Конвертированный в Kб размер диска: " + virmash.ConvertDiskSize("Kb"));
 
-    }
-    // endregion
+    }// endregion
 }
