@@ -13,11 +13,8 @@ import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
-<<<<<<< HEAD
 import allclasses.egarmina.Oval;
-=======
 import allclasses.mardanov.Transformer;
->>>>>>> origin/main
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -156,7 +153,6 @@ public class Main {
         System.out.println("**************************************");
     }
 
-<<<<<<< HEAD
     private static void egarmina() {
         Oval oval = new Oval(3, 2);
         Oval circle = new Oval(4, 4); // частный случай - круг
@@ -174,7 +170,6 @@ public class Main {
         System.out.println("Автор: Егармина");
     }
 
-=======
     private static void mardanov(){
         Transformer transformer1 = new Transformer();
         Transformer transformer2 = new Transformer("SuperBot", 2.5, true);
@@ -236,6 +231,5 @@ public class Main {
         System.out.println("Конвертированный в Kб размер диска: " + virmash.ConvertDiskSize("Kb"));
 
     }
->>>>>>> origin/main
     // endregion
 }
