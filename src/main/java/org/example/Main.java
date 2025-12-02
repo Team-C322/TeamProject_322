@@ -27,7 +27,6 @@ public class Main {
         karachebanDI();
         bartasevich();
         smorgun();
-
         golovachevClassShowCase();
         patrushevClassShowCase();
         budykinClassShowCase();
