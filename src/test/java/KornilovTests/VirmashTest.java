@@ -61,10 +61,8 @@ public class VirmashTest {
     public void testConvertDiskSize_BugDetected() {
         Virmash vm = new Virmash("test", "pass", "Linux", 1073741824.0, 2147483648.0); // RAM=1GB, Disk=2GB
 
-        // ⚠️ Сейчас ConvertDiskSize использует ramSize! Это ошибка.
         assertEquals(1.0, vm.ConvertDiskSize("Gb"), 0.001); // Это неправильно! Должно быть 2.0
 
-        // Проверка, что баг действительно присутствует
         Assert.assertNotEquals(2.0, vm.ConvertDiskSize("Gb"), 0.001);
     }
 
@@ -83,8 +81,6 @@ public class VirmashTest {
     @Test
     public void testShowInfo() {
         Virmash vm = new Virmash("test", "test", "TestOS", 100.0, 200.0);
-        // В JUnit 4 нет прямого аналога assertDoesNotThrow, но можно просто вызвать метод
-        // и убедиться, что тест не падает (т.е. исключение не выбрасывается)
         vm.ShowInfo();
     }
 }
