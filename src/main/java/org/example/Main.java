@@ -8,10 +8,12 @@ import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
+import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
@@ -24,10 +26,12 @@ public class Main {
 
         karachebanDI();
         bartasevich();
+        smorgun();
         golovachevClassShowCase();
         patrushevClassShowCase();
         budykinClassShowCase();
         Yarish();
+        egarmina();
         mardanov();
         kotelnikov();
         statsyuk();
@@ -57,6 +61,30 @@ public class Main {
         System.out.println(order.toString());
     }
 
+    private static void smorgun()
+    {
+    System.out.println("\n*****************Сморгун*********************");
+    System.out.println("\nИнформация о котах:");
+    Cat[] cats = {
+        new Cat("Барсик", 3, "Мужской", "Британский"),
+        new Cat("Мурка", 2, "Женский", "Сиамская"), 
+        new Cat("Васька", 4, "Мужской", "Дворовый")
+    };
+
+    for (int i = 0; i < cats.length; i++) {
+        System.out.println("\nКот №" + (i + 1) + ":");
+        cats[i].displayInfo();
+        cats[i].meow();
+    }
+    
+    System.out.println("\nДополнительная информация:");
+    System.out.println("Самый старший кот: " + cats[2].getName() + " (" + cats[2].getAge() + " года)");
+    System.out.println("Единственная кошка: " + cats[1].getName() + " (" + cats[1].getBreed() + ")");
+    }
+
+    //endregion
+
+    
     private static void golovachevClassShowCase() {
         Rectangle rect = new Rectangle(1.5, 4);
 
@@ -122,6 +150,23 @@ public class Main {
         System.out.println("Число 10 положительное? " + math.isPositive(10));
         System.out.println("Число -3 положительное? " + math.isPositive(-3));
         System.out.println("**************************************");
+    }
+
+    private static void egarmina() {
+        Oval oval = new Oval(3, 2);
+        Oval circle = new Oval(4, 4); // частный случай - круг
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики овала");
+        System.out.println(oval.toString());
+        System.out.println("Площадь овала: " + oval.getArea());
+        System.out.println("Периметр овала: " + oval.getPerimeter());
+
+        System.out.println("\nХарактеристики круга (частный случай овала)");
+        System.out.println(circle.toString());
+        System.out.println("Площадь круга: " + circle.getArea());
+        System.out.println("Периметр круга: " + circle.getPerimeter());
+        System.out.println("Автор: Егармина");
     }
 
     private static void mardanov(){
