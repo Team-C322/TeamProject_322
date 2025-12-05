@@ -6,8 +6,10 @@ import allclasses.bartasevich.generator.CourierGenerator;
 import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
+import allclasses.egarmina.Oval;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.mardanov.Transformer;
 import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
@@ -16,6 +18,7 @@ import allclasses.Yarish.SimpleMath;
 import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
 import allclasses.shchegoleva.Trapezium;
+import allclasses.polischuk.Rhombus;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -37,13 +40,14 @@ public class Main {
         kotelnikov();
         statsyuk();
         kornilov();
+        polischukClassShowCase();
     }
 
     // region Методы студентов
     // Пример оформления смотрите тут
     private static void karachebanDI() {
 
-        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 10, 70);
+        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
 
         System.out.println("*********************************");
         System.out.println("Характеристики стола");
@@ -68,7 +72,7 @@ public class Main {
     System.out.println("\nИнформация о котах:");
     Cat[] cats = {
         new Cat("Барсик", 3, "Мужской", "Британский"),
-        new Cat("Мурка", 2, "Женский", "Сиамская"), 
+        new Cat("Мурка", 2, "Женский", "Сиамская"),
         new Cat("Васька", 4, "Мужской", "Дворовый")
     };
 
@@ -77,7 +81,7 @@ public class Main {
         cats[i].displayInfo();
         cats[i].meow();
     }
-    
+
     System.out.println("\nДополнительная информация:");
     System.out.println("Самый старший кот: " + cats[2].getName() + " (" + cats[2].getAge() + " года)");
     System.out.println("Единственная кошка: " + cats[1].getName() + " (" + cats[1].getBreed() + ")");
@@ -85,7 +89,7 @@ public class Main {
 
     //endregion
 
-    
+
     private static void golovachevClassShowCase() {
         Rectangle rect = new Rectangle(1.5, 4);
 
@@ -243,5 +247,18 @@ public class Main {
         System.out.println("Данные о иртуальной машине в строку: " + virmash.ToString());
         System.out.println("Конвертированный в Kб размер диска: " + virmash.ConvertDiskSize("Kb"));
 
-    }// endregion
+    }
+
+    private static void polischukClassShowCase() {
+        Rhombus rhombus = new Rhombus(5, 60);
+
+        System.out.println("************** Полищук А.Ф. ***************");
+        System.out.println("Характеристики ромба");
+        System.out.println(rhombus.toString());
+        System.out.println("Площадь ромба");
+        System.out.println(rhombus.getArea());
+        System.out.println("Периметр ромба");
+        System.out.println(rhombus.getPerimeter());
+    }
+    // endregion
 }
