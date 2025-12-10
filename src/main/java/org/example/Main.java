@@ -15,11 +15,10 @@ import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
 import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
-<<<<<<< HEAD
-import allclasses.stepcheva.DancePair;
-=======
+import allclasses.egarmina.Oval;
+import allclasses.mardanov.Transformer;
+import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
->>>>>>> origin/main
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -28,7 +27,7 @@ import allclasses.polischuk.Rhombus;
 
 public class Main {
     public static void main(String[] args) {
-
+        shchegoleva();
         karachebanDI();
         bartasevich();
         smorgun();
@@ -42,6 +41,7 @@ public class Main {
         statsyuk();
         kornilov();
         polischukClassShowCase();
+        stepchevaClassShowCase();
     }
 
     // region Методы студентов
@@ -57,6 +57,22 @@ public class Main {
         desk.ShowPrice("USD");
         System.out.println("Для покупки свяжитесь со мной");
         desk.ContactToBuy();
+    }
+
+    private static void stepchevaClassShowCase() {
+        System.out.println("\n***************** Степчева *********************");
+
+        DancePair pair = new DancePair("Алиса", "Георгий", "Ча-ча-ча");
+
+        System.out.println("Информация о паре:");
+        System.out.println(pair);
+
+        System.out.println("Пара полная? → " + pair.isCompletePair());
+
+        System.out.println("Мини-оценка пары:");
+        System.out.println("Балл пары: " + pair.evaluate());
+
+        System.out.println("Автор: Степчева");
     }
 
     private static void bartasevich() {
@@ -158,25 +174,6 @@ public class Main {
         System.out.println("**************************************");
     }
 
-<<<<<<< HEAD
-    private static void stepchevaClassShowCase() {
-    System.out.println("\n***************** Степчева *********************");
-
-    DancePair pair = new DancePair("Алиса", "Георгий", "Ча-ча-ча");
-
-    System.out.println("Информация о паре:");
-    System.out.println(pair);
-
-    System.out.println("Пара полная? → " + pair.isCompletePair());
-
-    System.out.println("Мини-оценка пары:");
-    System.out.println("Балл пары: " + pair.evaluate());
-
-    System.out.println("Автор: Степчева");
-    }
-
-
-=======
     private static void egarmina() {
         Oval oval = new Oval(3, 2);
         Oval circle = new Oval(4, 4); // частный случай - круг
@@ -245,6 +242,19 @@ public class Main {
         System.out.println("Вся информация о человеке: ");
         System.out.println(person.getInfo());
     }
+    private static void shchegoleva() {
+        Trapezium tr = new Trapezium(2.0, 6.0, 3.0, 4.0, 2.5);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики трапеции");
+        System.out.println(tr.toString());
+        System.out.println("Периметр трапеции:");
+        System.out.println("P = " + tr.getPerimeter());
+        System.out.println("Площадь трапеции:");
+        System.out.println("S = " + tr.getArea());
+        System.out.println("Для использования свяжитесь со мной");
+        System.out.println("Автор: Щеголёва");
+    }
 
     private static void kornilov(){
         Virmash virmash = new Virmash("user0", "1234", "Ubuntu", 1024d, 2048d);
@@ -255,8 +265,7 @@ public class Main {
         System.out.println("Конвертированный в Kб размер диска: " + virmash.ConvertDiskSize("Kb"));
 
     }
->>>>>>> origin/main
-    // endregion
+
     private static void polischukClassShowCase() {
         Rhombus rhombus = new Rhombus(5, 60);
 
@@ -268,4 +277,5 @@ public class Main {
         System.out.println("Периметр ромба");
         System.out.println(rhombus.getPerimeter());
     }
+    // endregion
 }
