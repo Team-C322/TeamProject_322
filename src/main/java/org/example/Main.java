@@ -19,6 +19,7 @@ import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
 import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
+import allclasses.stepacheva.DancePair;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше

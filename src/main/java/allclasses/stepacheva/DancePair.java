@@ -1,4 +1,4 @@
-package allclasses.stepcheva;
+package allclasses.stepacheva;
 
 public class DancePair {
     private String partner1;

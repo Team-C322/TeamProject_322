@@ -1,9 +1,9 @@
-package stepchevaTests;
+package stepachevaTests;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-import allclasses.stepcheva.DancePair;
+import allclasses.stepacheva.DancePair;
 
 public class DancePairTest {
 
