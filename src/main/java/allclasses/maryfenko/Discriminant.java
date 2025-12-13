@@ -24,6 +24,9 @@ public class Discriminant {
 
     public int getNumberOfRoots() {
         if (a == 0) {
+            if (b == 0) {
+                return (c == 0) ? Integer.MAX_VALUE : 0;
+            }
             return 1;
         }
 
