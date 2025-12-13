@@ -4,6 +4,7 @@ import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.yurchenko.Square;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -15,7 +16,7 @@ public class Main {
 
         karachebanDI();
         bartasevich();
-
+        yurchenko();
     }
     //region Методы студентов
     // Пример оформления смотрите тут
@@ -38,6 +39,30 @@ public class Main {
         System.out.println("\n***************** Бартасевич И. Г. *********************");
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
+    }
+
+    private static void yurchenko() {
+        Square square = new Square(7.5);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики квадрата");
+        System.out.println(square.toString());
+        System.out.println("*********************************");
+
+        System.out.println("Математические расчёты:");
+        System.out.printf("• Площадь: %.2f%n", square.calculateArea());
+        System.out.printf("• Периметр: %.2f%n", square.calculatePerimeter());
+        System.out.printf("• Диагональ: %.2f%n", square.calculateDiagonal());
+        System.out.println("*********************************");
+
+        System.out.println("Масштабирование (×2.0):");
+        square.scale(2.0);
+        System.out.println("После масштабирования: " + square.toString());
+        System.out.println("*********************************");
+
+        System.out.println("Для заказа квадрата свяжитесь:");
+        System.out.println("Телефон: +7 (XXX) XXX-XX-XX");
+        System.out.println("Email: student@university.com");
     }
     //endregion
 }
