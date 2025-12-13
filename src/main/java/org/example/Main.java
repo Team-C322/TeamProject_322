@@ -20,6 +20,7 @@ import allclasses.mardanov.Transformer;
 import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
 import allclasses.stepacheva.DancePair;
+import allclasses.potylicyna.Circle;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -43,6 +44,7 @@ public class Main {
         kornilov();
         polischukClassShowCase();
         stepchevaClassShowCase();
+        potylicynaMethod();
     }
 
     // region Методы студентов
@@ -159,7 +161,7 @@ public class Main {
     }
     private static void Yarish(){
         SimpleMath math = new SimpleMath();
-        System.out.println("\n*******************Яриш Арина*******************");
+        System.out.println("\n**************************************");
         System.out.println("Демонстрация работы класса SimpleMath:");
         System.out.println("\n1. Вычисление факториала:");
         System.out.println("Факториал 5 = " + math.factorial(5));
@@ -277,6 +279,15 @@ public class Main {
         System.out.println(rhombus.getArea());
         System.out.println("Периметр ромба");
         System.out.println(rhombus.getPerimeter());
+    }
+    public static void potylicynaMethod() {
+        System.out.println("\n*****************  Потылицына З. С. *********************");
+        System.out.println("Демонстрация работы класса Circle:");
+        System.out.println("Характеристики круга:");
+        Circle circle = new Circle("purple", 7.5, 300);
+        System.out.println(circle.getDescription());
+        circle.printPrice();
+        System.out.printf("Длина окружности: %.1f см\n", circle.calculateCircumference());
     }
     // endregion
 }
