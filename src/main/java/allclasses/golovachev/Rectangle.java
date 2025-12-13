@@ -9,6 +9,7 @@ public class Rectangle {
     }
 
     public double getB() {
+
         return b;
     }
 
