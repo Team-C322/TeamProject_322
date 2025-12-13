@@ -19,6 +19,7 @@ import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
 import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
+import allclasses.stepacheva.DancePair;
 import allclasses.potylicyna.Circle;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
@@ -42,6 +43,7 @@ public class Main {
         statsyuk();
         kornilov();
         polischukClassShowCase();
+        stepchevaClassShowCase();
         potylicynaMethod();
     }
 
@@ -58,6 +60,22 @@ public class Main {
         desk.ShowPrice("USD");
         System.out.println("Для покупки свяжитесь со мной");
         desk.ContactToBuy();
+    }
+
+    private static void stepchevaClassShowCase() {
+        System.out.println("\n***************** Степчева *********************");
+
+        DancePair pair = new DancePair("Алиса", "Георгий", "Ча-ча-ча");
+
+        System.out.println("Информация о паре:");
+        System.out.println(pair);
+
+        System.out.println("Пара полная? → " + pair.isCompletePair());
+
+        System.out.println("Мини-оценка пары:");
+        System.out.println("Балл пары: " + pair.evaluate());
+
+        System.out.println("Автор: Степчева");
     }
 
     private static void bartasevich() {
