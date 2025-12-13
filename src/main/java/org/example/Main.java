@@ -4,6 +4,7 @@ import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.balova.OpticsCalculator;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -15,6 +16,7 @@ public class Main {
 
         karachebanDI();
         bartasevich();
+        balova();
 
     }
     //region Методы студентов
@@ -38,6 +40,23 @@ public class Main {
         System.out.println("\n***************** Бартасевич И. Г. *********************");
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
+    }
+
+    private static void balova() {
+        System.out.println("\n***************** Балова *********************");
+        System.out.println("Расчеты оптических систем\n");
+
+        System.out.println("Предмет перед собирающей линзой (30 см, +10 дптр)");
+        OpticsCalculator.solveProblem(30.0, 10.0);
+        System.out.println();
+
+        System.out.println("Предмет внутри фокуса собирающей линзы (5 см, +10 дптр)");
+        OpticsCalculator.solveProblem(5.0, 10.0);
+        System.out.println();
+
+        System.out.println("Предмет перед рассеивающей линзой (20 см, -5 дптр)");
+        OpticsCalculator.solveProblem(20.0, -5.0);
+        System.out.println();
     }
     //endregion
 }
