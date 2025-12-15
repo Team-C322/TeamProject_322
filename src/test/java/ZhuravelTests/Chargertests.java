@@ -1,11 +1,11 @@
-package zhuraveltest;
+package ZhuravelTests;
 
 import allclasses.zhuravelPS.Charger;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class chargertests {
+public class Chargertests {
     private Charger charger;
 
     @Before

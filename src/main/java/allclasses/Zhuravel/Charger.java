@@ -1,4 +1,4 @@
-package allclasses.zhuravelPS;
+package allclasses.Zhuravel;
 
 public class Charger {
     private final String model;

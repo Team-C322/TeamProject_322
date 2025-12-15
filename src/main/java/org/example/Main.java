@@ -4,7 +4,7 @@ import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
 import allclasses.karachebanDI.StudyDesk;
-import allclasses.zhuravelPS.Charger;
+import allclasses.Zhuravel.Charger;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -16,7 +16,7 @@ public class Main {
 
         karachebanDI();
         bartasevich();
-        zhuravelPSMethod();
+        ZhuravelMethod();
 
     }
     //region Методы студентов
@@ -42,7 +42,7 @@ public class Main {
         System.out.println(order.toString());
     }
 
-    private static void zhuravelPSMethod() {
+    private static void ZhuravelMethod() {
         System.out.println("\n***************** Журавель П. С. *********************");
         Charger charger = new Charger("Type-C", 45);
         charger.connect();
