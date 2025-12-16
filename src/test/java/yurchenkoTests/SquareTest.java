@@ -1,192 +1,114 @@
 package yurchenkoTests;
 
 import allclasses.yurchenko.Square;
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class SquareTest {
 
-    // Класс для тестового случая
-    public static class TestCase {
-        private final String testName;
-        private final double side;
-        private final double expectedArea;
-        private final double expectedPerimeter;
-        private final boolean shouldThrowException;
-        private final String expectedErrorMessage;
+    // Тест 1: Конструктор и вычисление площади
+    @Test
+    public void constructorAndCalculateArea_workCorrectly() {
+        Square square = new Square(4.0);
 
-        public TestCase(String testName, double side, double expectedArea,
-                        double expectedPerimeter, boolean shouldThrowException,
-                        String expectedErrorMessage) {
-            this.testName = testName;
-            this.side = side;
-            this.expectedArea = expectedArea;
-            this.expectedPerimeter = expectedPerimeter;
-            this.shouldThrowException = shouldThrowException;
-            this.expectedErrorMessage = expectedErrorMessage;
-        }
+        Assert.assertEquals(4.0, square.getSide(), 0.0001);
+        Assert.assertEquals(16.0, square.calculateArea(), 0.0001);
     }
 
-    // Класс для результатов теста
-    public static class TestResult {
-        private final String testName;
-        private final boolean passed;
-        private final String message;
+    // Тест 2: Вычисление периметра
+    @Test
+    public void calculatePerimeter_returnsCorrectValue() {
+        Square square = new Square(5.0);
 
-        public TestResult(String testName, boolean passed, String message) {
-            this.testName = testName;
-            this.passed = passed;
-            this.message = message;
-        }
+        double expectedPerimeter = 20.0; // 4 * 5
+        double actualPerimeter = square.calculatePerimeter();
+
+        Assert.assertEquals(expectedPerimeter, actualPerimeter, 0.001);
     }
 
-    // Основной метод запуска тестов
-    public static void main(String[] args) {
-        System.out.println("ТЕСТИРОВАНИЕ КЛАССА SQUARE \n");
+    // Тест 3: Вычисление диагонали
+    @Test
+    public void calculateDiagonal_returnsCorrectValue() {
+        Square square = new Square(3.0);
 
-        // Создаем тестовые случаи (как @Parameterized.Parameters у Бартасевича)
-        List<TestCase> testCases = createTestCases();
+        double expectedDiagonal = 3.0 * Math.sqrt(2);
+        double actualDiagonal = square.calculateDiagonal();
 
-        // Запускаем все тесты
-        List<TestResult> results = new ArrayList<>();
-        for (TestCase testCase : testCases) {
-            TestResult result = runTestCase(testCase);
-            results.add(result);
-            printTestResult(result);
-        }
-
-        // Выводим итоговую статистику
-        printStatistics(results);
+        Assert.assertEquals(expectedDiagonal, actualDiagonal, 0.001);
     }
 
-    // Метод создания тестовых случаев (аналог getParameters())
-    private static List<TestCase> createTestCases() {
-        List<TestCase> cases = new ArrayList<>();
+    // Тест 4: Сравнение квадратов (равные)
+    @Test
+    public void isEqual_returnsTrue_whenSidesAreEqual() {
+        Square square1 = new Square(4.0);
+        Square square2 = new Square(4.0);
 
-        // Позитивные тесты
-        cases.add(new TestCase("Создание квадрата со стороной 4",
-                4.0, 16.0, 16.0, false, null));
-        cases.add(new TestCase("Создание квадрата со стороной 3",
-                3.0, 9.0, 12.0, false, null));
-        cases.add(new TestCase("Создание квадрата со стороной 5",
-                5.0, 25.0, 20.0, false, null));
-        cases.add(new TestCase("Создание квадрата со стороной 1",
-                1.0, 1.0, 4.0, false, null));
-
-        // Негативные тесты (ожидаем исключения)
-        cases.add(new TestCase("Попытка создать квадрат со стороной 0",
-                0, 0, 0, true, "Сторона квадрата должна быть положительным числом"));
-        cases.add(new TestCase("Попытка создать квадрат с отрицательной стороной",
-                -2.0, 0, 0, true, "Сторона квадрата должна быть положительным числом"));
-        cases.add(new TestCase("Попытка создать квадрат со стороной -5",
-                -5.0, 0, 0, true, "Сторона квадрата должна быть положительным числом"));
-
-        return cases;
+        Assert.assertTrue(square1.isEqual(square2));
     }
 
-    // Метод запуска одного тестового случая
-    private static TestResult runTestCase(TestCase testCase) {
-        String testName = testCase.testName;
+    // Тест 5: Сравнение квадратов (неравные)
+    @Test
+    public void isEqual_returnsFalse_whenSidesAreDifferent() {
+        Square square1 = new Square(4.0);
+        Square square2 = new Square(5.0);
 
+        Assert.assertFalse(square1.isEqual(square2));
+    }
+
+    // Тест 6: Масштабирование квадрата
+    @Test
+    public void scale_changesSideCorrectly() {
+        Square square = new Square(3.0);
+
+        square.scale(2.0); // Увеличиваем в 2 раза
+
+        Assert.assertEquals(6.0, square.getSide(), 0.0001);
+        Assert.assertEquals(36.0, square.calculateArea(), 0.0001);
+    }
+
+    // Тест 7: Создание квадрата с отрицательной стороной (исключение)
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor_throwsException_whenSideIsNegative() {
+        new Square(-2.0);
+    }
+
+    // Тест 8: Создание квадрата с нулевой стороной (исключение)
+    @Test(expected = IllegalArgumentException.class)
+    public void constructor_throwsException_whenSideIsZero() {
+        new Square(0.0);
+    }
+
+    // Тест 9: Проверка сообщения исключения
+    @Test
+    public void constructor_throwsExceptionWithCorrectMessage() {
         try {
-            // Тест на создание и вычисление площади
-            if (testCase.shouldThrowException) {
-                try {
-                    new Square(testCase.side);
-                    return new TestResult(testName, false,
-                            "Ожидалось исключение, но оно не было выброшено");
-                } catch (IllegalArgumentException e) {
-                    if (!e.getMessage().equals(testCase.expectedErrorMessage)) {
-                        return new TestResult(testName, false,
-                                "Неправильное сообщение об ошибке: " + e.getMessage());
-                    }
-                    return new TestResult(testName, true,
-                            "Исключение выброшено корректно");
-                }
-            } else {
-                // Создаем квадрат
-                Square square = new Square(testCase.side);
-
-                // Проверяем площадь (squareCreationAndAreaTest)
-                double actualArea = square.calculateArea();
-                if (Math.abs(actualArea - testCase.expectedArea) > 0.001) {
-                    return new TestResult(testName, false,
-                            "Неверная площадь. Ожидалось: " + testCase.expectedArea +
-                                    ", Получено: " + actualArea);
-                }
-
-                // Проверяем периметр (squarePerimeterTest)
-                double actualPerimeter = square.calculatePerimeter();
-                if (Math.abs(actualPerimeter - testCase.expectedPerimeter) > 0.001) {
-                    return new TestResult(testName, false,
-                            "Неверный периметр. Ожидалось: " + testCase.expectedPerimeter +
-                                    ", Получено: " + actualPerimeter);
-                }
-
-                // Проверяем сравнение (squareComparisonTest)
-                Square sameSquare = new Square(testCase.side);
-                Square differentSquare = new Square(testCase.side + 1);
-                if (!square.isEqual(sameSquare)) {
-                    return new TestResult(testName, false,
-                            "Квадраты с одинаковой стороной должны быть равны");
-                }
-                if (square.isEqual(differentSquare)) {
-                    return new TestResult(testName, false,
-                            "Квадраты с разной стороной не должны быть равны");
-                }
-
-                // Проверяем масштабирование (squareScalingTest)
-                double scaleFactor = 2.0;
-                Square squareForScaling = new Square(testCase.side);
-                squareForScaling.scale(scaleFactor);
-                double expectedScaledSide = testCase.side * scaleFactor;
-                if (Math.abs(squareForScaling.getSide() - expectedScaledSide) > 0.001) {
-                    return new TestResult(testName, false,
-                            "Неверное масштабирование. Ожидалась сторона: " +
-                                    expectedScaledSide + ", Получено: " + squareForScaling.getSide());
-                }
-
-                // Проверяем диагональ (squareDiagonalTest)
-                double expectedDiagonal = testCase.side * Math.sqrt(2);
-                double actualDiagonal = square.calculateDiagonal();
-                if (Math.abs(actualDiagonal - expectedDiagonal) > 0.001) {
-                    return new TestResult(testName, false,
-                            "Неверная диагональ. Ожидалось: " + expectedDiagonal +
-                                    ", Получено: " + actualDiagonal);
-                }
-
-                return new TestResult(testName, true, "Все проверки пройдены успешно");
-            }
-        } catch (Exception e) {
-            return new TestResult(testName, false,
-                    "Непредвиденное исключение: " + e.getMessage());
+            new Square(-5.0);
+            Assert.fail("Ожидалось исключение, но оно не было выброшено");
+        } catch (IllegalArgumentException e) {
+            Assert.assertEquals("Сторона квадрата должна быть положительным числом", e.getMessage());
         }
     }
 
-    // Метод вывода результата одного теста
-    private static void printTestResult(TestResult result) {
-        if (result.passed) {
-            System.out.println(" [" + result.testName + "] - ПРОЙДЕН");
-        } else {
-            System.out.println("[" + result.testName + "] - НЕ ПРОЙДЕН");
-            System.out.println("   Причина: " + result.message);
-        }
-    }
+    // Тест 10: Множественные проверки для одного квадрата
+    @Test
+    public void multipleCalculations_workCorrectly() {
+        Square square = new Square(2.5);
 
-    // Метод вывода итоговой статистики
-    private static void printStatistics(List<TestResult> results) {
-        long passedCount = results.stream().filter(r -> r.passed).count();
-        long failedCount = results.size() - passedCount;
+        // Проверяем все вычисления для одного квадрата
+        Assert.assertEquals(2.5, square.getSide(), 0.0001);
+        Assert.assertEquals(6.25, square.calculateArea(), 0.001); // 2.5 * 2.5
+        Assert.assertEquals(10.0, square.calculatePerimeter(), 0.001); // 4 * 2.5
+        Assert.assertEquals(2.5 * Math.sqrt(2), square.calculateDiagonal(), 0.001);
 
-        System.out.println("\n=== СТАТИСТИКА ТЕСТИРОВАНИЯ ===");
-        System.out.println("Всего тестов: " + results.size());
-        System.out.println("Пройдено: " + passedCount);
-        System.out.println("Не пройдено: " + failedCount);
+        // Проверяем сравнение
+        Square sameSquare = new Square(2.5);
+        Square differentSquare = new Square(3.0);
+        Assert.assertTrue(square.isEqual(sameSquare));
+        Assert.assertFalse(square.isEqual(differentSquare));
 
-        if (failedCount == 0) {
-            System.out.println("\n ВСЕ ТЕСТЫ УСПЕШНО ПРОЙДЕНЫ!");
-        } else {
-            System.out.println("\n Некоторые тесты не пройдены");
-        }
+        // Проверяем масштабирование
+        square.scale(2.0);
+        Assert.assertEquals(5.0, square.getSide(), 0.0001);
+        Assert.assertEquals(25.0, square.calculateArea(), 0.001);
     }
 }
