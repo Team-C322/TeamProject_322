@@ -9,6 +9,9 @@ import allclasses.bartasevich.model.Order;
 import allclasses.egarmina.Oval;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+<<<<<<< HEAD
+import allclasses.miusskii.MiusskiiClass;
+=======
 import allclasses.mardanov.Transformer;
 import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
@@ -21,6 +24,7 @@ import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
 import allclasses.stepacheva.DancePair;
 import allclasses.potylicyna.Circle;
+>>>>>>> main
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -32,11 +36,66 @@ public class Main {
         shchegoleva();
         karachebanDI();
         bartasevich();
+<<<<<<< HEAD
+        miusskii();
 
     }
     //region Методы студентов
-    // Пример оформления смотрите тут
+        // Пример оформления смотрите тут
+    private static void miusskii(){
+
+        System.out.println("\n***************** МИУССКИЙ Е. А. *********************");
+
+        MiusskiiClass a = new MiusskiiClass();
+
+        a.addLanguage("JavaScript");
+        a.addLanguage("Java");
+        a.addLanguage("HTML");
+
+        System.out.println("Список веб-языков:");
+        for (String lang : a.getAll()) {
+            System.out.println("- " + lang);
+        }
+
+        // Проверка наличия
+        System.out.println("\nПроверка языка Java:");
+        if (a.containsLanguage("Java")) {
+            System.out.println("Java найден!");
+        } else {
+            System.out.println("Java не найден.");
+        }
+
+        System.out.println("\nПроверка языка PHP:");
+        if (a.containsLanguage("PHP")) {
+            System.out.println("PHP найден!");
+        } else {
+            System.out.println("PHP не найден.");
+        }
+}
+
+
+
     private static void karachebanDI(){
+=======
+        smorgun();
+        golovachevClassShowCase();
+        patrushevClassShowCase();
+        budykinClassShowCase();
+        Yarish();
+        egarmina();
+        mardanov();
+        kotelnikov();
+        statsyuk();
+        kornilov();
+        polischukClassShowCase();
+        stepchevaClassShowCase();
+        potylicynaMethod();
+    }
+
+    // region Методы студентов
+    // Пример оформления смотрите тут
+    private static void karachebanDI() {
+>>>>>>> main
 
         StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
 
