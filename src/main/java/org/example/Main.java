@@ -6,8 +6,10 @@ import allclasses.bartasevich.generator.CourierGenerator;
 import allclasses.bartasevich.generator.OrderGenerator;
 import allclasses.bartasevich.model.Courier;
 import allclasses.bartasevich.model.Order;
+import allclasses.egarmina.Oval;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.mardanov.Transformer;
 import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
 import allclasses.kotelnikov.PiggyBank;
@@ -15,6 +17,10 @@ import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
 import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
+import allclasses.shchegoleva.Trapezium;
+import allclasses.polischuk.Rhombus;
+import allclasses.stepacheva.DancePair;
+import allclasses.potylicyna.Circle;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -23,7 +29,7 @@ import allclasses.mardanov.Transformer;
 
 public class Main {
     public static void main(String[] args) {
-
+        shchegoleva();
         karachebanDI();
         bartasevich();
         smorgun();
@@ -36,13 +42,16 @@ public class Main {
         kotelnikov();
         statsyuk();
         kornilov();
+        polischukClassShowCase();
+        stepchevaClassShowCase();
+        potylicynaMethod();
     }
 
     // region Методы студентов
     // Пример оформления смотрите тут
     private static void karachebanDI() {
 
-        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 10, 70);
+        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
 
         System.out.println("*********************************");
         System.out.println("Характеристики стола");
@@ -51,6 +60,22 @@ public class Main {
         desk.ShowPrice("USD");
         System.out.println("Для покупки свяжитесь со мной");
         desk.ContactToBuy();
+    }
+
+    private static void stepchevaClassShowCase() {
+        System.out.println("\n***************** Степчева *********************");
+
+        DancePair pair = new DancePair("Алиса", "Георгий", "Ча-ча-ча");
+
+        System.out.println("Информация о паре:");
+        System.out.println(pair);
+
+        System.out.println("Пара полная? → " + pair.isCompletePair());
+
+        System.out.println("Мини-оценка пары:");
+        System.out.println("Балл пары: " + pair.evaluate());
+
+        System.out.println("Автор: Степчева");
     }
 
     private static void bartasevich() {
@@ -67,7 +92,7 @@ public class Main {
     System.out.println("\nИнформация о котах:");
     Cat[] cats = {
         new Cat("Барсик", 3, "Мужской", "Британский"),
-        new Cat("Мурка", 2, "Женский", "Сиамская"), 
+        new Cat("Мурка", 2, "Женский", "Сиамская"),
         new Cat("Васька", 4, "Мужской", "Дворовый")
     };
 
@@ -76,7 +101,7 @@ public class Main {
         cats[i].displayInfo();
         cats[i].meow();
     }
-    
+
     System.out.println("\nДополнительная информация:");
     System.out.println("Самый старший кот: " + cats[2].getName() + " (" + cats[2].getAge() + " года)");
     System.out.println("Единственная кошка: " + cats[1].getName() + " (" + cats[1].getBreed() + ")");
@@ -84,7 +109,7 @@ public class Main {
 
     //endregion
 
-    
+
     private static void golovachevClassShowCase() {
         Rectangle rect = new Rectangle(1.5, 4);
 
@@ -136,7 +161,7 @@ public class Main {
     }
     private static void Yarish(){
         SimpleMath math = new SimpleMath();
-        System.out.println("\n*******************Яриш Арина*******************");
+        System.out.println("\n**************************************");
         System.out.println("Демонстрация работы класса SimpleMath:");
         System.out.println("\n1. Вычисление факториала:");
         System.out.println("Факториал 5 = " + math.factorial(5));
@@ -220,6 +245,19 @@ public class Main {
         System.out.println("Вся информация о человеке: ");
         System.out.println(person.getInfo());
     }
+    private static void shchegoleva() {
+        Trapezium tr = new Trapezium(2.0, 6.0, 3.0, 4.0, 2.5);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики трапеции");
+        System.out.println(tr.toString());
+        System.out.println("Периметр трапеции:");
+        System.out.println("P = " + tr.getPerimeter());
+        System.out.println("Площадь трапеции:");
+        System.out.println("S = " + tr.getArea());
+        System.out.println("Для использования свяжитесь со мной");
+        System.out.println("Автор: Щеголёва");
+    }
 
     private static void kornilov(){
         Virmash virmash = new Virmash("user0", "1234", "Ubuntu", 1024d, 2048d);
@@ -229,6 +267,27 @@ public class Main {
         System.out.println("Данные о иртуальной машине в строку: " + virmash.ToString());
         System.out.println("Конвертированный в Kб размер диска: " + virmash.ConvertDiskSize("Kb"));
 
+    }
+
+    private static void polischukClassShowCase() {
+        Rhombus rhombus = new Rhombus(5, 60);
+
+        System.out.println("************** Полищук А.Ф. ***************");
+        System.out.println("Характеристики ромба");
+        System.out.println(rhombus.toString());
+        System.out.println("Площадь ромба");
+        System.out.println(rhombus.getArea());
+        System.out.println("Периметр ромба");
+        System.out.println(rhombus.getPerimeter());
+    }
+    public static void potylicynaMethod() {
+        System.out.println("\n*****************  Потылицына З. С. *********************");
+        System.out.println("Демонстрация работы класса Circle:");
+        System.out.println("Характеристики круга:");
+        Circle circle = new Circle("purple", 7.5, 300);
+        System.out.println(circle.getDescription());
+        circle.printPrice();
+        System.out.printf("Длина окружности: %.1f см\n", circle.calculateCircumference());
     }
     // endregion
 }
