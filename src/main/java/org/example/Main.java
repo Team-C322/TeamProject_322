@@ -9,6 +9,7 @@ import allclasses.bartasevich.model.Order;
 import allclasses.egarmina.Oval;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.balova.OpticsCalculator;
 import allclasses.mardanov.Transformer;
 import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
@@ -17,6 +18,7 @@ import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
 import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
+import allclasses.miusskii.MiusskiiClass;
 import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
 import allclasses.stepacheva.DancePair;
@@ -32,6 +34,7 @@ public class Main {
         shchegoleva();
         karachebanDI();
         bartasevich();
+        balova();
         smorgun();
         golovachevClassShowCase();
         patrushevClassShowCase();
@@ -42,6 +45,7 @@ public class Main {
         kotelnikov();
         statsyuk();
         kornilov();
+        miusskii();
         polischukClassShowCase();
         stepchevaClassShowCase();
         potylicynaMethod();
@@ -61,6 +65,52 @@ public class Main {
         System.out.println("Для покупки свяжитесь со мной");
         desk.ContactToBuy();
     }
+    private static void miusskii(){
+    System.out.println("\n***************** МИУССКИЙ Е. А. *********************");
+
+        MiusskiiClass a = new MiusskiiClass();
+
+        // Добавление языков
+        a.addLanguage("JavaScript");
+        a.addLanguage("Java");
+        a.addLanguage("HTML");
+        
+        // Попытка добавить дубликат
+        a.addLanguage("Java");
+        
+        System.out.println("Всего языков: " + a.getAll().size());
+
+        System.out.println("\nСписок веб-языков:");
+        for (String lang : a.getAll()) {
+            System.out.println("- " + lang);
+        }
+
+        // Проверка наличия
+        System.out.println("\nПроверка языков:");
+        checkLanguage(a, "Java");
+        checkLanguage(a, "PHP");
+        checkLanguage(a, "JavaScript");
+        checkLanguage(a, "Python");
+        
+        // Проверка на пустой язык (с обработкой исключения)
+        System.out.println("\nПопытка добавить пустой язык:");
+        try {
+            a.addLanguage("");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+    }
+
+    // Вспомогательный метод для проверки языка
+    private static void checkLanguage(MiusskiiClass mc, String language) {
+        System.out.print(language + ": ");
+        if (mc.containsLanguage(language)) {
+            System.out.println("найден!");
+        } else {
+            System.out.println("не найден.");
+        }
+    }
+
 
     private static void stepchevaClassShowCase() {
         System.out.println("\n***************** Степчева *********************");
@@ -84,6 +134,23 @@ public class Main {
         System.out.println("\n***************** Бартасевич И. Г. *********************");
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
+    }
+
+    private static void balova() {
+        System.out.println("\n***************** Балова *********************");
+        System.out.println("Расчеты оптических систем\n");
+
+        System.out.println("Предмет перед собирающей линзой (30 см, +10 дптр)");
+        OpticsCalculator.solveProblem(30.0, 10.0);
+        System.out.println();
+
+        System.out.println("Предмет внутри фокуса собирающей линзы (5 см, +10 дптр)");
+        OpticsCalculator.solveProblem(5.0, 10.0);
+        System.out.println();
+
+        System.out.println("Предмет перед рассеивающей линзой (20 см, -5 дптр)");
+        OpticsCalculator.solveProblem(20.0, -5.0);
+        System.out.println();
     }
 
     private static void smorgun()
