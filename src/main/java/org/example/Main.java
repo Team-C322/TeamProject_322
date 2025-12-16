@@ -63,34 +63,49 @@ public class Main {
         System.out.println("Для покупки свяжитесь со мной");
         desk.ContactToBuy();
     }
-     private static void miusskii(){
-
-        System.out.println("\n***************** МИУССКИЙ Е. А. *********************");
+    private static void miusskii(){
+    System.out.println("\n***************** МИУССКИЙ Е. А. *********************");
 
         MiusskiiClass a = new MiusskiiClass();
 
+        // Добавление языков
         a.addLanguage("JavaScript");
         a.addLanguage("Java");
         a.addLanguage("HTML");
+        
+        // Попытка добавить дубликат
+        a.addLanguage("Java");
+        
+        System.out.println("Всего языков: " + a.getAll().size());
 
-        System.out.println("Список веб-языков:");
+        System.out.println("\nСписок веб-языков:");
         for (String lang : a.getAll()) {
             System.out.println("- " + lang);
         }
 
         // Проверка наличия
-        System.out.println("\nПроверка языка Java:");
-        if (a.containsLanguage("Java")) {
-            System.out.println("Java найден!");
-        } else {
-            System.out.println("Java не найден.");
+        System.out.println("\nПроверка языков:");
+        checkLanguage(a, "Java");
+        checkLanguage(a, "PHP");
+        checkLanguage(a, "JavaScript");
+        checkLanguage(a, "Python");
+        
+        // Проверка на пустой язык (с обработкой исключения)
+        System.out.println("\nПопытка добавить пустой язык:");
+        try {
+            a.addLanguage("");
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ошибка: " + e.getMessage());
         }
+    }
 
-        System.out.println("\nПроверка языка PHP:");
-        if (a.containsLanguage("PHP")) {
-            System.out.println("PHP найден!");
+    // Вспомогательный метод для проверки языка
+    private static void checkLanguage(MiusskiiClass mc, String language) {
+        System.out.print(language + ": ");
+        if (mc.containsLanguage(language)) {
+            System.out.println("найден!");
         } else {
-            System.out.println("PHP не найден.");
+            System.out.println("не найден.");
         }
     }
 
