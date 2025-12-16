@@ -1,6 +1,7 @@
 package miusskiiTests;
 
 import allclasses.miusskii.MiusskiiClass;
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import java.util.List; 
 import static org.junit.Assert.*;
