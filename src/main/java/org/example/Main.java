@@ -9,9 +9,6 @@ import allclasses.bartasevich.model.Order;
 import allclasses.egarmina.Oval;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
-<<<<<<< HEAD
-import allclasses.miusskii.MiusskiiClass;
-=======
 import allclasses.mardanov.Transformer;
 import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
@@ -20,11 +17,11 @@ import allclasses.patrushev.Triangle;
 import allclasses.Yarish.SimpleMath;
 import allclasses.egarmina.Oval;
 import allclasses.mardanov.Transformer;
+import allclasses.miusskii.MiusskiiClass;
 import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
 import allclasses.stepacheva.DancePair;
 import allclasses.potylicyna.Circle;
->>>>>>> main
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -36,13 +33,37 @@ public class Main {
         shchegoleva();
         karachebanDI();
         bartasevich();
-<<<<<<< HEAD
+        smorgun();
+        golovachevClassShowCase();
+        patrushevClassShowCase();
+        budykinClassShowCase();
+        Yarish();
+        egarmina();
+        mardanov();
+        kotelnikov();
+        statsyuk();
+        kornilov();
         miusskii();
-
+        polischukClassShowCase();
+        stepchevaClassShowCase();
+        potylicynaMethod();
     }
-    //region Методы студентов
-        // Пример оформления смотрите тут
-    private static void miusskii(){
+
+    // region Методы студентов
+    // Пример оформления смотрите тут
+    private static void karachebanDI() {
+
+        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
+
+        System.out.println("*********************************");
+        System.out.println("Характеристики стола");
+        System.out.println(desk.ToString());
+        System.out.println("Посмотрите цену в USD");
+        desk.ShowPrice("USD");
+        System.out.println("Для покупки свяжитесь со мной");
+        desk.ContactToBuy();
+    }
+     private static void miusskii(){
 
         System.out.println("\n***************** МИУССКИЙ Е. А. *********************");
 
@@ -71,42 +92,8 @@ public class Main {
         } else {
             System.out.println("PHP не найден.");
         }
-}
-
-
-
-    private static void karachebanDI(){
-=======
-        smorgun();
-        golovachevClassShowCase();
-        patrushevClassShowCase();
-        budykinClassShowCase();
-        Yarish();
-        egarmina();
-        mardanov();
-        kotelnikov();
-        statsyuk();
-        kornilov();
-        polischukClassShowCase();
-        stepchevaClassShowCase();
-        potylicynaMethod();
     }
 
-    // region Методы студентов
-    // Пример оформления смотрите тут
-    private static void karachebanDI() {
->>>>>>> main
-
-        StudyDesk desk = new StudyDesk("Стол", 1425232, 11000, 200, 100, 70);
-
-        System.out.println("*********************************");
-        System.out.println("Характеристики стола");
-        System.out.println(desk.ToString());
-        System.out.println("Посмотрите цену в USD");
-        desk.ShowPrice("USD");
-        System.out.println("Для покупки свяжитесь со мной");
-        desk.ContactToBuy();
-    }
 
     private static void stepchevaClassShowCase() {
         System.out.println("\n***************** Степчева *********************");
