@@ -26,15 +26,17 @@
         <junit.version>5.10.0</junit.version>
         <!-- версия Surefire -->
         <surefire.version>3.1.2</surefire.version>
+        <!-- версия RestAssured -->
+        <rest-assured.version>5.3.2</rest-assured.version>
     </properties>
 
     <dependencies>
         <!-- RestAssured для API тестирования -->
+        <!-- УБРАН scope=test, так как используется в main коде -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>5.3.2</version>
-            <scope>test</scope>
+            <version>${rest-assured.version}</version>
         </dependency>
 
         <!-- JSON парсер -->
@@ -42,6 +44,13 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
+        </dependency>
+
+        <!-- Allure аннотации для использования в основном коде -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-java-commons</artifactId>
+            <version>${allure.version}</version>
         </dependency>
 
         <!-- JUnit 5 Jupiter API -->
@@ -77,11 +86,18 @@
         </dependency>
         
         <!-- Модуль взаимодействия Allure и RestAssured -->
+        <!-- УБРАН scope=test, так как используется в main коде -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-rest-assured</artifactId>
             <version>${allure.version}</version>
-            <scope>test</scope>
+        </dependency>
+
+        <!-- Jackson для работы с JSON (нужен для RestAssured) -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.3</version>
         </dependency>
     </dependencies>
 
@@ -139,6 +155,13 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>io.qameta.allure</groupId>
+                            <artifactId>allure-java-commons</artifactId>
+                            <version>${allure.version}</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
         </plugins>
