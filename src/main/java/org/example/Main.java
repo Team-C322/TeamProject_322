@@ -27,12 +27,10 @@ public class Main {
 
         MiusskiiClass a = new MiusskiiClass();
 
-        // Добавляем языки
         a.addLanguage("JavaScript");
         a.addLanguage("Java");
         a.addLanguage("HTML");
 
-        // Вывод всех языков
         System.out.println("Список веб-языков:");
         for (String lang : a.getAll()) {
             System.out.println("- " + lang);
@@ -52,7 +50,7 @@ public class Main {
         } else {
             System.out.println("PHP не найден.");
         }
-    }
+}
 
 
 
