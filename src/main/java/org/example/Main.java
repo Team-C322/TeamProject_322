@@ -23,6 +23,7 @@ import allclasses.shchegoleva.Trapezium;
 import allclasses.polischuk.Rhombus;
 import allclasses.stepacheva.DancePair;
 import allclasses.potylicyna.Circle;
+import allclasses.maryfenko1.Discriminant;
 
 //TIP <h2> ДЛЯ ИСПОЛЬЗОВАНИЯ СВОЕГО КЛАССА ИМПОРТИРУЙТЕ ЕГО </h2>
 // Пример импорта выше
@@ -49,6 +50,7 @@ public class Main {
         polischukClassShowCase();
         stepchevaClassShowCase();
         potylicynaMethod();
+        maryfenko1();
     }
 
     // region Методы студентов
@@ -355,6 +357,19 @@ public class Main {
         System.out.println(circle.getDescription());
         circle.printPrice();
         System.out.printf("Длина окружности: %.1f см\n", circle.calculateCircumference());
+    }
+
+    private static void maryfenko1(){
+        System.out.println("\n***************** Маруфенко П.А. *********************");
+        System.out.println("Расчет дискриминанта квадратного уравнения:");
+        Discriminant d1 = new Discriminant(1, -3, 2);
+        System.out.println("Уравнение: x² - 3x + 2 = 0");
+        System.out.println(d1.toString());
+        System.out.println("Корней: " + d1.getNumberOfRoots());
+        Discriminant d2 = new Discriminant(1, -4, 4);
+        System.out.println("\nУравнение: x² - 4x + 4 = 0");
+        System.out.println(d2.toString());
+        System.out.println("Корней: " + d2.getNumberOfRoots());
     }
     // endregion
 }
