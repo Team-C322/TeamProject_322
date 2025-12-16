@@ -9,6 +9,7 @@ import allclasses.bartasevich.model.Order;
 import allclasses.egarmina.Oval;
 import allclasses.golovachev.Rectangle;
 import allclasses.karachebanDI.StudyDesk;
+import allclasses.balova.OpticsCalculator;
 import allclasses.mardanov.Transformer;
 import allclasses.smorgun.Cat;
 import allclasses.kornilov.Virmash;
@@ -33,6 +34,7 @@ public class Main {
         shchegoleva();
         karachebanDI();
         bartasevich();
+        balova();
         smorgun();
         golovachevClassShowCase();
         patrushevClassShowCase();
@@ -132,6 +134,23 @@ public class Main {
         System.out.println("\n***************** Бартасевич И. Г. *********************");
         System.out.println("\nИнформация о заказе:");
         System.out.println(order.toString());
+    }
+
+    private static void balova() {
+        System.out.println("\n***************** Балова *********************");
+        System.out.println("Расчеты оптических систем\n");
+
+        System.out.println("Предмет перед собирающей линзой (30 см, +10 дптр)");
+        OpticsCalculator.solveProblem(30.0, 10.0);
+        System.out.println();
+
+        System.out.println("Предмет внутри фокуса собирающей линзы (5 см, +10 дптр)");
+        OpticsCalculator.solveProblem(5.0, 10.0);
+        System.out.println();
+
+        System.out.println("Предмет перед рассеивающей линзой (20 см, -5 дптр)");
+        OpticsCalculator.solveProblem(20.0, -5.0);
+        System.out.println();
     }
 
     private static void smorgun()
