@@ -33,7 +33,7 @@ public class OpticsCalculatorTest {
     public void getImageDistance_DivergingLens_AlwaysVirtual() {
         double objectDistance = 20.0;
         double opticalPower = -5.0;
-        double expected = -6.6667;
+        double expected = -10;
 
         double actual = OpticsCalculator.getImageDistance(objectDistance, opticalPower);
 
